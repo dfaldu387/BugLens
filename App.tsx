@@ -26,9 +26,8 @@ export default function App() {
   const [isPresented, setIsPresented] = useState(true);
 
   return (
-    <SafeAreaView style={styles.container}> {/* Use SafeAreaView for iOS devices with notches */}
-      <Text>Hello, world!</Text>
-
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.underDevelopmentText}>Under Development...</Text>
       <Modal visible={isPresented} animationType="slide" transparent={false}>
         <OnboardingCinematicView isPresented={setIsPresented} />
       </Modal>
@@ -237,7 +236,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: Colors.white
   },
   onboarding: {
     flex: 1,
@@ -443,11 +443,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center"
   },
-
   lastViewAnimationContainer: {
     flex: 1,
     justifyContent: 'flex-end',
     width: '100%',
     bottom: 30
+  },
+  underDevelopmentText: {
+    fontSize: moderateScale(22),
+    color: Colors.black
   }
 });
